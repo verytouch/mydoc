@@ -29,6 +29,12 @@
 
     <change-notes><![CDATA[
     <div>
+        <strong>v2.2.9</strong>
+        <ul>
+          <li>fix some bugs</li>
+        </ul>
+     </div>
+    <div>
         <strong>v2.2.8</strong>
         <ul>
           <li>refactor doc builder</li>
