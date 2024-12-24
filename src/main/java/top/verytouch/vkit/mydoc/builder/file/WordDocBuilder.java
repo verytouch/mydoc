@@ -21,12 +21,12 @@ import java.util.zip.ZipOutputStream;
  * @author verytouch
  * @since 2021-12
  */
-public class WordDocDocBuilder extends FreemarkerDocBuilder {
+public class WordDocBuilder extends FreemarkerDocBuilder {
 
     private static final String WORD_RESOURCE = "word.docx";
     private static final String TO_REPLACE_FILE = "document.xml";
 
-    public WordDocDocBuilder(AnActionEvent event) {
+    public WordDocBuilder(AnActionEvent event) {
         super(event, DocType.WORD);
     }
 
