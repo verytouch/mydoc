@@ -15,6 +15,7 @@ public enum DocType {
 
     MARK_DOWN("markdown", ".md", "markdown.ftl"),
     HTML("html", ".html", "html.ftl"),
+    PDF("pdf", ".pdf", "pdf.ftl"),
     JSON("json model", ".json", ""),
     POSTMAN("postman", ".postman.json", ""),
     WORD("word", ".docx", "word.ftl"),

@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "top.verytouch.vkit.mydoc.plugin.idea"
-version = "2.2.9"
+version = "2.2.10"
 
 repositories {
     maven {
@@ -18,6 +18,7 @@ dependencies {
     compileOnly("org.projectlombok:lombok:1.18.36")
     annotationProcessor("org.projectlombok:lombok:1.18.36")
     implementation("org.freemarker:freemarker:2.3.29")
+    implementation("org.xhtmlrenderer:flying-saucer-pdf-itext5:9.1.22")
 }
 
 // Configure Gradle IntelliJ Plugin

@@ -10,6 +10,7 @@
         <li>build html</li>
         <li>build markdown</li>
         <li>build word</li>
+        <li>build pdf</li>
         <li>build postman collection</li>
         <li>copy idea http client</li>
         <li>copy curl</li>
@@ -28,6 +29,12 @@
     ]]></description>
 
     <change-notes><![CDATA[
+    <div>
+        <strong>v2.2.10</strong>
+        <ul>
+          <li>support building pdf</li>
+        </ul>
+     </div>
     <div>
         <strong>v2.2.9</strong>
         <ul>
@@ -183,12 +190,20 @@
                           relative-to-action="top.verytouch.vkit.mydoc.action.MarkdownAction"/>
         </action>
 
-        <action id="top.verytouch.vkit.mydoc.action.PostmanAction" class="top.verytouch.vkit.mydoc.action.PostmanAction"
-                text="Build Postman Collection">
+        <action id="top.verytouch.vkit.mydoc.action.PdfAction" class="top.verytouch.vkit.mydoc.action.PdfAction"
+                text="Build PDF">
             <add-to-group group-id="MyDoc.EditorPopup" anchor="after"
                           relative-to-action="top.verytouch.vkit.mydoc.action.WordAction"/>
             <add-to-group group-id="MyDoc.ProjectPopup" anchor="after"
                           relative-to-action="top.verytouch.vkit.mydoc.action.WordAction"/>
+        </action>
+
+        <action id="top.verytouch.vkit.mydoc.action.PostmanAction" class="top.verytouch.vkit.mydoc.action.PostmanAction"
+                text="Build Postman Collection">
+            <add-to-group group-id="MyDoc.EditorPopup" anchor="after"
+                          relative-to-action="top.verytouch.vkit.mydoc.action.PdfAction"/>
+            <add-to-group group-id="MyDoc.ProjectPopup" anchor="after"
+                          relative-to-action="top.verytouch.vkit.mydoc.action.PdfAction"/>
         </action>
 
         <action id="top.verytouch.vkit.mydoc.action.JsonModelAction"

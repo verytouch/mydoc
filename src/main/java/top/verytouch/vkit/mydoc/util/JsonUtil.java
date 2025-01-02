@@ -70,7 +70,7 @@ public class JsonUtil {
     public static <T> T toObject(String json, Class<T> clazz) {
         try {
             return JSON.readValue(json, clazz);
-        } catch (JsonProcessingException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -81,7 +81,7 @@ public class JsonUtil {
     public static JsonNode toJsonNode(String json) {
         try {
             return JSON.readTree(json);
-        } catch (JsonProcessingException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
