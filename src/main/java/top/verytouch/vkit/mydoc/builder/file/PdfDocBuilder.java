@@ -10,9 +10,11 @@ import org.xhtmlrenderer.pdf.DefaultPDFCreationListener;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 import org.xhtmlrenderer.pdf.PDFCreationListener;
 import top.verytouch.vkit.mydoc.constant.DocType;
+import top.verytouch.vkit.mydoc.constant.OS;
 import top.verytouch.vkit.mydoc.model.ApiModel;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -24,7 +26,7 @@ import java.io.OutputStream;
  */
 public class PdfDocBuilder extends FreemarkerDocBuilder {
 
-    private static final String FONT_PATH = "/template/simhei.ttf";
+    private static final String FONT_PATH = OS.now().getFontDir() + "simhei.ttf";
 
     public PdfDocBuilder(AnActionEvent event) {
         super(event, DocType.PDF);
@@ -37,6 +39,9 @@ public class PdfDocBuilder extends FreemarkerDocBuilder {
 
     @Override
     protected OutputStream buildOutputStream(ApiModel model) throws IOException {
+        if (!new File(FONT_PATH).exists()) {
+            throw new IOException("require font [" + FONT_PATH + "] not found");
+        }
         ByteArrayOutputStream html = (ByteArrayOutputStream) super.buildOutputStream(model);
         ITextRenderer renderer = new ITextRenderer();
         OutputStream outputStream;

@@ -2,6 +2,7 @@
 - html
 - markdown
 - word
+- pdf
 - postman
 - idea http client
 - curl

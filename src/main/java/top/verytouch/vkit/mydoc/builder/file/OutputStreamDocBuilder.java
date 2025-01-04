@@ -7,6 +7,7 @@ import top.verytouch.vkit.mydoc.builder.BuilderResult;
 import top.verytouch.vkit.mydoc.builder.DocBuilder;
 import top.verytouch.vkit.mydoc.config.ConfigStorage;
 import top.verytouch.vkit.mydoc.constant.DocType;
+import top.verytouch.vkit.mydoc.constant.OS;
 import top.verytouch.vkit.mydoc.model.ApiModel;
 
 import javax.swing.filechooser.FileSystemView;
@@ -53,16 +54,7 @@ public abstract class OutputStreamDocBuilder extends DocBuilder {
         if (!model.getConfig().isOpenOutDir()) {
             return;
         }
-        String os = System.getProperty("os.name").toLowerCase();
-        String command;
-        if (os.contains("windows")) {
-            command = "explorer";
-        } else if (os.contains("mac")) {
-            command = "open";
-        } else {
-            command = "xdg-open";
-        }
-        Runtime.getRuntime().exec(new String[]{command, getOutPath(model)});
+        Runtime.getRuntime().exec(new String[]{OS.now().getExploreCmd(), getOutPath(model)});
     }
 
 }
