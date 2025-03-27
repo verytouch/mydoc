@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "top.verytouch.vkit.mydoc.plugin.idea"
-version = "2.2.10"
+version = "2.2.11"
 
 repositories {
     maven {
